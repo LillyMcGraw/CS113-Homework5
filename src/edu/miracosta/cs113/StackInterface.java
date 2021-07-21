@@ -31,3 +31,5 @@ public interface StackInterface<E> {
      */
     public E push(E obj);
 }
+
+

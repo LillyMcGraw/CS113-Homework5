@@ -27,7 +27,7 @@ public class CircularArrayQueueTest {
     private static final int INITIAL_CAPACITY = 5;
 
     /** Object derived from the Queue abstract class. */
-    private Queue<String> circularQueue;
+    private Queue<Object> circularQueue;
 
     /**
      * Helper function for test operations which utilize methods offer or add.
@@ -56,7 +56,7 @@ public class CircularArrayQueueTest {
     @Before
     public void setup() {
         // Instantiate circular array queue with an initial capacity of 5
-        circularQueue = new CircularArrayQueue<String>(INITIAL_CAPACITY);
+        circularQueue = new CircularArrayQueue(INITIAL_CAPACITY);
     }
 
     // region peek and element tests

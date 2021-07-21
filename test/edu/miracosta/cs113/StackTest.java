@@ -16,12 +16,12 @@ import static org.junit.Assert.fail;
 public class StackTest {
 
     /** An object which implements StackInterface. */
-    private StackInterface<Integer> stack;
+    private StackInterface<Object> stack;
 
     /** This function is executed every single time before each test runs. */
     @Before
     public void setup() {
-        stack = new ArrayListStack<Integer>();
+        stack = new ArrayListStack();
     }
 
     @Test

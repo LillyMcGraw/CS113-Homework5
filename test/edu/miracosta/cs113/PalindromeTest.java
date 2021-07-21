@@ -44,8 +44,38 @@ public class PalindromeTest {
 
         // TODO:
         // Implement this method body using your ArrayListStack. Be mindful of your algorithm!
-        return false;
-
+    	if(s == null) {
+        	throw new IllegalArgumentException(); //If its a null string, its going to be false
+        }
+       
+        //This String creates a new variable, called new String without the white space and makes it all upper case, then creates a character array with it
+        String newString = s.toUpperCase().replaceAll("\\s+", "");
+        ArrayListStack<Character> stack = new ArrayListStack<Character>();
+        char[] stringToChar = newString.toCharArray();
+       //If there is always one character in the array, then it will be a Palindrome
+        if(newString.length() == 1) {
+        	return true;
+        }
+        //Adds all of the character array to the ArrayListStack Arraylist
+        for(int i = 0; i<newString.length()/2;i++) {
+        	 	stack.push(stringToChar[i]);
+        
+      }
+       //Checks if each of the elements in the array matches with the Arraylist in the stack class, if any of them dont, it will return false. If none of them do, it will return true.
+        for(int j = (newString.length() + 1)/2; j<newString.length(); j++) {
+        	if (stack.pop() != stringToChar[j]) {
+        		return false;
+        	}
+        }
+        return true;
+        
+        
+        //Algorithm 
+        //take in the string, then make it into characters inside of ArraylistStack
+        //remember to get rid of spaces, case Sensitiviy 
+        //pop and compare it to the front of the Arraylist
+        	
+      
     } // End of method isPalindrome
 
     @Test
